@@ -5,11 +5,11 @@ variable "aws_region" {
 
 variable "access_key" {
        description = "The AWS access key." 
-       default     = "AKIA3XPXKQGK44GWTNFF" 
+       default     = "" 
 }
 variable "secret_key" {
        description = "The AWS secret key." 
-       default     = "TDEHzPWzY9zYTk7tzj6iXSqdi+t7X2qvHCBJIKrd" 
+       default     = "" 
 }
 variable "key_name" { 
     description = " SSH keys to connect to ec2 instance" 
