@@ -1,0 +1,32 @@
+{
+    "builders":[
+        {
+        "type":"amazon-ebs",
+        "access_key": "AKIA3XPXKQGK44GWTNFF",
+        "secret_key": "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",
+        "region":"us-west-1",
+        "ami_name":"Node-AMI",
+        "source_ami": "ami-0d382e80be7ffdae5",
+        "instance_type": "t2.micro",
+        "ssh_username": "ubuntu",
+        "force_deregister": true,
+        "ami_description":"Contains Node-JS application on top of Docker Container."
+        }
+    ],
+    "provisioners":[
+        {
+            "type": "shell",
+            "script": "setup.sh"
+        }
+    ],
+    "post-processors": [
+        {
+        "type": "manifest",
+        "output": "manifest.json",
+        "strip_path": true,
+        "custom_data": {
+            "my_custom_data": "example"
+        }
+        }
+    ]
+} 
