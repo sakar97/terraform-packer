@@ -45,21 +45,6 @@ resource "aws_instance" "myFirstInstance" {
     Name = var.tag_name
   }
 }
-resource "null_resource" "remote-exec" {
-  connection {
-    type="ssh"
-    host= aws_instance.myFirstInstance.public_ip
-    user= "ubuntu"
-    timeout = "5m"
-    private_key= "${file("tester.pem")}"
-  }
-  provisioner "remote-exec" {
-  inline = [
-    "cd /home/Node-JS",
-    "sudo docker-compose up -d",
-  ]
-}
-}
 # Create Elastic IP address
 resource "aws_eip" "myFirstInstance" {
   vpc      = true
