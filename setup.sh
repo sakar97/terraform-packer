@@ -21,3 +21,5 @@ sudo apt install git
 git --version
 cd /home
 sudo git clone https://github.com/sakar97/Node-JS.git
+cd /home/Node-JS
+sudo docker-compose up -d
