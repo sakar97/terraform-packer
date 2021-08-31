@@ -15,7 +15,7 @@ To create a custom AWS AMI using Packer.
        ` packer build packer.json`
  - Run terraform script
 ## Variables
-. In Packer File:
+- In Packer File:
     1- Aws access_key, secret_key, region, ami_name, source_ami, instance_type, ssh_username
-. In Terraform File:
+- In Terraform File:
     1- Aws access_key, secret_key, region, key_name, instance_type, security_group
